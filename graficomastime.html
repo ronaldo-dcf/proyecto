@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <title>Document</title>
+</head>
+<body>
+  <center>
+  <h1>METODS DE ORDENAMIENTO (TIEMPO) </h1>
+</center>
+<style>
+  h1{
+    text-decoration: underline;
+  }
+</style>
+    <canvas id="chart" width="800" height="400"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+   
+<script type="module">
+    function totalCasesChart(ctx){
+    const chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100],
+        datasets: [
+        {
+            label: 'mergesort',
+            borderColor: 'red',
+            data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        },
+        {
+          
+            label: 'bublesort',
+            borderColor: 'green',
+            data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        },
+        {
+            label: 'countingsort',
+            borderColor: 'orange',
+            data: [0,0.008,0.008, 0.008,0, 0.008, 0.008, 0.03,0.005,0.02, 0.01,0.008,0.012,0.01,0.017,0.016,0.016, 0.022,0.002,0.017, 0.01,0.01, 0.019,0.02,0.025,0.02,0,0.021,0,0.018,0.017,0.009,0.019,0.008,0.027,0.027,0.023,0.023, 0.025,0.015,0.032,0.019,0.04,0.04,0.023, 0.02,0.018,0.036,0.03,0.031,0.015,0.029,0.04,0.023,0.029,0.031,0.025,0.016,0.032,0.018, 0.025,0.022,0.029,0.032,0.016,0.019,0.017,0.026,0.037,0.008,0.018,0.018,0.024,0.024, 0.033,0.022,0.024,0.018,0.016,0.02,0.027,0.019,0.034, 0.027,0.032,0.016,0.044,0.027,0.038,0.024,0.021,0.016,0.009,0.016,0.029,0.01,0.026, 0.033,0.033,0.024, 0.011],
+        },
+        {
+          label: 'quicksort',
+            borderColor: 'blue',
+            data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        },
+        {
+          
+          label: 'otro_metodo',
+            borderColor: 'Yellow',
+            data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        },
+        
+    ]
+    },
+    options: {
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display: false,
+              }
+            }]
+          },
+          title: {
+            display: true,
+            text: 'Todos los casos desde el primer reporte COVID-19',
+            fontSize: 30,
+            padding: 30,
+            fontColor: '#12619c',
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 20,
+              boxWidth: 15,
+              fontFamily: 'system-ui',
+              fontColor: 'black',
+            }
+          },
+          layout: {
+            padding: {
+              right: 50,
+            }
+          },
+          tooltips: {
+            backgroundColor: '#0584f6',
+            titleFontSize: 20,
+            xPadding: 20,
+            yPadding: 20,
+            bodyFontSize: 15,
+            bodySpacing: 10,
+            mode: 'x',
+          },
+          elements: {
+            line: {
+              borderWidth: 8,
+              fill: false,
+            },
+            point: {
+              radius: 6,
+              borderWidth: 4,
+              backgroundColor: 'white',
+              hoverRadius: 8,
+              hoverBorderWidth: 4,
+            }
+        }
+        }
+    })
+    }
+    function renderCharts(){
+        const ctx = document.querySelector('#chart').getContext('2d');
+        totalCasesChart(ctx)
+    }
+renderCharts()
+</script>
+<center>
+  <h1>Tamaño de elementos</h1>
+
+</center>
+</body>
+</html>
